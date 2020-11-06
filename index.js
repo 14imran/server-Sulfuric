@@ -64,6 +64,10 @@ app.use('/api', fileUploads);
 //client routes
 const clientRoutes = require('./routes/client-routes')
 app.use('/api/clients', clientRoutes);
+
+//Project routes
+const projectRoutes = require('./routes/project.routes')
+app.use('/api/projects', projectRoutes);
 // const stripeRoutes = require('./routes/stripe.routes')
 // app.use('/api', stripeRoutes)
 
