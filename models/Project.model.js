@@ -3,9 +3,12 @@ const mongoose = require("mongoose");
 
 const ProjectSchema = new Schema(
   {
-    name: {
+    author :{
+      type: Schema.Types.ObjectId, ref: 'User'
+    },
+      projectName: {
       type: String,
-      required: [true, "Please enter username"],
+      required: [true, "Please enter projectname"],
     },
     title: {
       type: String,

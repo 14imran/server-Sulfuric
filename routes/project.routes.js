@@ -20,9 +20,9 @@ router.get('/', (req, res) => {
 })
  // /api/Projects/create
 router.post('/create', isLoggedIn,  (req, res) => {  
-  const {name, title,startDate,endDate,amount,mark} = req.body;
-  console.log("Projects",req.body)
-  ProjectModel.create({name, title,startDate,endDate,amount,mark})
+  const {projectName, title,startDate,endDate,amount,mark} = req.body;
+  console.log("Projectssssssssssss",req.session)
+  ProjectModel.create({projectName, title,startDate,endDate,amount,mark})
         .then((response) => {
              res.status(200).json(response)
         })
