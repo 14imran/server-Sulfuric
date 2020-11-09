@@ -68,6 +68,11 @@ app.use('/api/clients', clientRoutes);
 //Project routes
 const projectRoutes = require('./routes/project.routes')
 app.use('/api/projects', projectRoutes);
+
+//Invoice routes
+const invoiceRoutes = require('./routes/invoice.routes')
+app.use('/api/invoices', invoiceRoutes);
+
 // const stripeRoutes = require('./routes/stripe.routes')
 // app.use('/api', stripeRoutes)
 
