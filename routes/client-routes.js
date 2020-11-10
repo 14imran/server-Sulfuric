@@ -35,7 +35,51 @@ router.post('/create', isLoggedIn,  (req, res) => {
         })  
 })
 
+// api/clients/:myId
 
+router.get('/:myId',  (req, res) => {
+    ClientModel.findById(req.params.myId)
+      .then((response) => {
+           res.status(200).json(response)
+      })
+      .catch((err) => {
+           res.status(500).json({
+                error: 'Something went wrong',
+                message: err
+           })
+      }) 
+ })
+// api/clients/delete/:id
+
+ router.delete('/delete/:id',  (req, res) => {
+  ClientModel.findByIdAndDelete(req.params.id)
+           .then((response) => {
+                res.status(200).json(response)
+           })
+           .catch((err) => {
+                res.status(500).json({
+                     error: 'Something went wrong',
+                     message: err
+                })
+           })  
+ })
+ // api/clients/edit/:id
+
+ router.patch('/edit/:id',  (req, res) => {
+     let id = req.params.id
+     const {name, email, tag} = req.body;
+  ClientModel.findByIdAndUpdate(id, {$set: {name: name, email: email, tag: tag}})
+           .then((response) => {
+                res.status(200).json(response)
+           })
+           .catch((err) => {
+                console.log(err)
+                res.status(500).json({
+                     error: 'Something went wrong',
+                     message: err
+                })
+           }) 
+ })
 
 
 module.exports = router;
