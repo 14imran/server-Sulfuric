@@ -15,11 +15,11 @@ const ProjectSchema = new Schema(
       required: [true, "Please enter title"],
     },
     startDate: {
-      type: Number,
+      type: Date,
       required: [true, "Please enter start date"],
     },
     endDate: {
-      type: Number,
+      type: Date,
       required: [true, "Please enter end date"],
     },
 
