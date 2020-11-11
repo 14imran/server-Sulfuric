@@ -53,7 +53,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Register routes
 const todoRoutes = require('./routes/todo.routes');
-app.use('/api', todoRoutes);
+app.use('/api/todo', todoRoutes);
 
 const authRoutes = require('./routes/auth.routes')
 app.use('/api', authRoutes);
